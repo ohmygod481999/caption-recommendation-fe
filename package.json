@@ -1,0 +1,23 @@
+{
+  "name": "caption-recommendation-fe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "template": "http-server template"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ohmygod481999/caption-recommendation-fe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ohmygod481999/caption-recommendation-fe/issues"
+  },
+  "homepage": "https://github.com/ohmygod481999/caption-recommendation-fe#readme",
+  "dependencies": {
+    "http-server": "^13.0.2"
+  }
+}
