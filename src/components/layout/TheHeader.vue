@@ -2,7 +2,7 @@
   <!--======================================
         START HEADER AREA
     ======================================-->
-<header class="header-area bg-white">
+<header class="header-area bg-white" style="position: fixed; width: 100%">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-2">

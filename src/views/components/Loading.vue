@@ -15,6 +15,7 @@
         <img
           src="../../assets/images/icon.svg"
           class="svg-icon"
+          style="margin-top: 5%;"
         />
       </div>
       <!-- end hero-content -->
@@ -25,3 +26,6 @@
         END HERO AREA
 ======================================-->
 </template>
+<style scoped>
+
+</style>
