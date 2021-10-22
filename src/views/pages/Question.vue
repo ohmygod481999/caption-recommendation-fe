@@ -16,8 +16,7 @@
             </div><!-- end col-lg-2 -->
             <div class="col-lg-7">
                 <div class="question-tabs mb-50px">
-                    <ul class="nav nav-tabs generic-tabs justify-content-around" id="myTab" role="tablist">
-                        <li class="nav-item"><div class="anim-bar"></div></li>
+                    <ul class="nav nav-tabs generic-tabs justify-content-around" id="myTab" role="tablist">   
                         <li class="nav-item">
                             <a class="nav-link active" id="questions-tab" data-toggle="tab" href="#questions" role="tab" aria-controls="questions" aria-selected="true">Khám phá</a>
                         </li>

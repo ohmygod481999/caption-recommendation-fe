@@ -1,6 +1,6 @@
 <template>
   <div class="login-form">
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form action="/examples/actions/confirmation.php" method="post" style="padding-top: 30%;">
       <h2 class="text-center">Sign in</h2>
       <div class="form-group">
         <div class="input-group">

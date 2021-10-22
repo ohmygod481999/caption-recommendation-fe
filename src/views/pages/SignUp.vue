@@ -1,4 +1,5 @@
 <template>
+<form class="Register" style="padding: 5%;">
   <div id="login-box">
     <div class="left">
       <h1>Sign up</h1>
@@ -23,6 +24,7 @@
     </div>
     <div class="or">OR</div>
   </div>
+  </form>
 </template>
 
 <script>

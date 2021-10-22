@@ -40,17 +40,17 @@ export default new Router({
         {
             path: '/login',
             name: 'Login',
-            component: Login
+            components: {default:Login}
         },
         {
             path: '/Sign-Up',
             name: 'SignUp',
-            component: SignUp
+            components: {default:SignUp}
         },
         {
             path: '/Reset-password',
             name: 'ResetPassword',
-            component: ResetPassword
+            components: {default:ResetPassword}
         },
     ]
 })

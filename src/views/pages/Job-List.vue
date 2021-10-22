@@ -2,8 +2,8 @@
   <!-- ================================
          START QUESTION AREA
 ================================= -->
-  <section class="question-area pt-40px pb-40px">
-    <div class="container">
+  <section class="question-area pt-40px pb-40px" style="padding-top: 0">
+    <div class="container" style="margin-top: -5%;">
       <div class="tab-content" id="myTabContent">
         <div
           class="tab-pane fade show active"

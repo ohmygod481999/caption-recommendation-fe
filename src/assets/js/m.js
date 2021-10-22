@@ -4,7 +4,7 @@ Author:         TechyDevs
 Website:         www.techydevs.com
 Author Email:   contact@tecydevs.com
 ----------------------------------------------*/
-
+import jQuery from 'jquery';
 (function ($) {
     "use strict";
     var $window = $(window);
