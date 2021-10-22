@@ -12,7 +12,7 @@
       <input type="submit" name="signup_submit" value="Sign me up" />
     </div>
 
-    <div class="right">
+    <div class="right" style="top: -10%">
       <span class="loginwith">Sign in with<br />social network</span>
 
       <button class="social-signin facebook">Log in with facebook</button>

@@ -10,7 +10,7 @@
     <span class="stroke-shape stroke-shape-5"></span>
     <span class="stroke-shape stroke-shape-6"></span>
     <div class="container">
-      <div class="hero-content pt-80px pb-80px">
+      <div class="hero-content pt-80px pb-80px" style="margin-top:5%">
         <h2 class="section-title">Đăng caption của bạn</h2>
         <img
           src="../../assets/images/icon.svg"

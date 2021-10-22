@@ -40,10 +40,10 @@
         </button>
       </div>
       <div class="clearfix">
-        <label class="float-left form-check-label"
+        <label class="float-left form-check-label" 
           ><input type="checkbox" /> Remember me</label
         >
-        <router-link to="/Reset-password">Forgot Password?</router-link>
+        <router-link to="/Reset-password" style="margin-left: 25%;">Forgot Password?</router-link>
       </div>
       <div class="or-seperator"><i>or</i></div>
       <p class="text-center">Login with your social media account</p>
