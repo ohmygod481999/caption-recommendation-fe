@@ -12,6 +12,7 @@
     "core-js": "^3.6.5",
     "jquery": "^3.6.0",
     "vue": "^2.6.11",
+    "vue-infinite-loading": "^2.4.5",
     "vue-router": "^3.5.2",
     "vue-router-multi-view": "^0.1.0"
   },

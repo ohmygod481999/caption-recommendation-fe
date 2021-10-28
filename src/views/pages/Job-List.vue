@@ -1077,7 +1077,7 @@
                 </div>
                 <!-- end media -->
               </div>
-              <div class="pager pt-4">
+             <!-- <div class="pager pt-4">
                 <nav aria-label="Page navigation example">
                   <ul class="pagination generic-pagination pr-1">
                     <li class="page-item">
@@ -1111,7 +1111,7 @@
                   </ul>
                 </nav>
               </div>
-              <!-- end pager -->
+               end pager -->
             </div>
             <!-- end col-lg-9 -->
             <div class="col-lg-3">
