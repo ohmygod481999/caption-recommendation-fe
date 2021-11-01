@@ -104,7 +104,12 @@
                 </div>
                 <!-- end filters -->
                 <div class="question-main-bar">
-                  <div class="questions-snippet">
+                  <!-- <transition name="fade">
+                    <div class="loading" v-if="showloader">
+                      <span class="fa fa-spinner fa-spin"></span> Loading
+                    </div>
+                  </transition> -->
+                  <div class="questions-snippet" id="infinite-list">
                     <div
                       class="media media-card media--card align-items-center"
                       v-for="caption in captions"
@@ -155,7 +160,8 @@
                       </div>
                     </div>
                     <!-- end media -->
-                    <infinite-loading @infinite="infiniteHandler"></infinite-loading>
+                    <infinite-loading spinner="bubbles" @infinite="infiniteHandler">
+                    </infinite-loading>
                   </div>
                   <!-- end questions-snippet -->
                 </div>
@@ -1591,40 +1597,78 @@
 </template>
 <script>
 import axios from "axios";
-import InfiniteLoading from 'vue-infinite-loading';
+import InfiniteLoading from "vue-infinite-loading"
 export default {
-    components: {
-        InfiniteLoading
-    },
+  components: {
+    InfiniteLoading
+  },
   data() {
     return {
       captions: [],
       errors: [],
-      loading: false,
-      page: 1
+      page: 1,
+      lastPage: 0,
+      isInit: true
     };
   },
-  created() {
-    axios
-      .get(`http://localhost:3000/captions`)
-      .then((response) => {
-        this.captions = response.data;
-      })
-      .catch((e) => {
-        this.errors.push(e);
-      });
+  created: function(){
+      this.fetchCaptions()
+          .then(response => {
+            if (response.data.length > 0) {
+              this.captions = response.data;
+              this.isInit = false;
+            }else{
+              console.log('No users found.');
+            }
+          })
+          .catch(e => console.log(e))
   },
   methods: {
-      infiniteHandler($state) {
-      setTimeout(() => {
-        const temp = [];
-        for (let i = this.captions.length + 1; i <= this.captions.length + 20; i++) {
-          temp.push(i);
-        }
-        this.list = this.captions.concat(temp);
-        $state.loaded();
-      }, 1000);
-    },
+    // loadMore() {
+    //   this.loading = true;
+    //   setTimeout(e => {
+    //     for (var i = 1; i < 20; i++) {
+    //       axios.get(`http://localhost:3000/captions?_limit=20&_page=${i}`)
+    //       .then((res)=>{
+    //         this.captions = res.data;
+    //         console.log(e);
+    //       }).catch(error=>{
+    //         console.log(error);
+    //       })
+    //     }
+    //     this.loading = false;
+    //   }, 200);
+    // },
+    fetchCaptions: function() {
+      let isInit = this.isInit;
+        let url = isInit 
+                ? `http://localhost:3000/captions`
+                :`http://localhost:3000/captions?_limit=20&_page=${this.page}` ;
+                
+        return axios.get(url);
+      },
+      
+      infiniteHandler: function($state) {
+          setTimeout(function () {
+            this.fetchCaptions()
+                .then(response => {
+                    if (response.data.length > 0) {
+                      this.lastPage = response.data.length;
+                      if (this.page -1 === this.lastPage) {
+                        this.page = 2;
+                        $state.complete();
+                      } else {
+                        this.page += 1;
+                      }
+                      $state.loaded();
+                    } else {
+                      this.page = 2;
+                      $state.complete();
+                    }
+                })
+                .catch(e => console.log(e));
+            }.bind(this), 1000);
+      }
   },
 };
 </script>
